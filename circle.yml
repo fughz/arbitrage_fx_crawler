@@ -1,0 +1,9 @@
+machine:
+  ruby:
+    version: 2.2.2
+
+dependencies:
+  pre:
+    - bundle config build.nokogiri --use-system-libraries
+  override:
+    - bundle install --path vendor/bundle
