@@ -7,3 +7,7 @@ dependencies:
     - bundle config build.nokogiri --use-system-libraries
   override:
     - bundle install --path vendor/bundle
+
+database:
+  override:
+    - bundle exec rake db:create db:migrate db:seed
