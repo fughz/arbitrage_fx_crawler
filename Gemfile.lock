@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/fughz/fx_info_reader.git
+  revision: f8a277699609fc89fdc1b0a17189053ea474ca49
+  specs:
+    fx_info_reader (0.0.1)
+      nokogiri
+
+GIT
   remote: git://github.com/gregbell/active_admin.git
   revision: e72c62b01397b17123e1b71ef706c5d8e4ffbb2f
   specs:
@@ -221,6 +228,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano3-unicorn
   devise
+  fx_info_reader!
   jbuilder
   newrelic_rpm
   rails (= 4.2.6)

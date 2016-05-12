@@ -32,6 +32,8 @@ gem 'whenever', :require => false
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 
+gem 'fx_info_reader', github: 'fughz/fx_info_reader'
+
 group :development, :test do
   # For capistrano
   gem 'capistrano', '3.1.0'
