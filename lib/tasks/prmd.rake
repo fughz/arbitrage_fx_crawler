@@ -4,6 +4,15 @@ require 'prmd/rake_tasks/doc'
 
 namespace :prmd do
   namespace :v1 do
+    
+    task :mkdir => :environment do
+      Dir.mkdir('schema') unless File.directory?('schema')
+      schema_api = File.join('schema', 'api')
+      Dir.mkdir(schema_api) unless File.directory?(schema_api)
+      schema_api_v1 = File.join(schema_api, 'v1')
+      Dir.mkdir(schema_api_v1) unless File.directory?(schema_api_v1)
+    end
+
     Prmd::RakeTasks::Combine.new do |t|
       t.options[:meta] = 'schemata/api/meta.json'
       t.paths << 'schemata/api/v1/'
@@ -20,4 +29,4 @@ namespace :prmd do
   end
 end
 desc 'Combine, verify, and generate documantation'
-task prmd: ['prmd:v1:combine', 'prmd:v1:verify', 'prmd:v1:doc']
+task prmd: ['prmd:v1:mkdir', 'prmd:v1:combine', 'prmd:v1:verify', 'prmd:v1:doc']
