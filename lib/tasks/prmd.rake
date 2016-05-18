@@ -4,7 +4,7 @@ require 'prmd/rake_tasks/doc'
 
 namespace :prmd do
   namespace :v1 do
-    
+
     task :mkdir => :environment do
       Dir.mkdir('schema') unless File.directory?('schema')
       schema_api = File.join('schema', 'api')
@@ -28,5 +28,6 @@ namespace :prmd do
     end
   end
 end
+
 desc 'Combine, verify, and generate documantation'
 task prmd: ['prmd:v1:mkdir', 'prmd:v1:combine', 'prmd:v1:verify', 'prmd:v1:doc']

@@ -28,9 +28,6 @@ module ArbitrageFx
     config.autoload_paths += %W(#{config.root}/lib)
 
     if ENV["RAILS_ENV"] == 'test'
-      # Rebuild ./schemata/schema.json
-      system('bundle exec prmd combine schemata/api/v1/* > schema/api/v1/schema.json')
-
       schema = JSON.parse(File.read("#{Rails.root}/schema/api/v1/schema.json"))
       config.middleware.use Rack::JsonSchema::ErrorHandler
       config.middleware.use Rack::JsonSchema::ResponseValidation, schema: schema
