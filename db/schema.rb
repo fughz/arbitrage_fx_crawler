@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 20160512135834) do
   end
 
   create_table "swap_points", force: :cascade do |t|
-    t.float    "point"
+    t.float    "short_point"
+    t.float    "long_point"
     t.integer  "currency_unit"
-    t.string   "currency_pair"
     t.datetime "date"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false

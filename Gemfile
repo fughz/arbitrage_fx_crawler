@@ -32,11 +32,14 @@ gem 'whenever', :require => false
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 
+gem 'prmd'
+gem 'rack-json_schema'
+
 gem 'fx_info_reader', github: 'fughz/fx_info_reader'
 
 group :development, :test do
   # For capistrano
-  gem 'capistrano', '3.1.0'
+  gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'capistrano3-unicorn'
@@ -45,4 +48,12 @@ end
 group :staging, :production do
   gem 'unicorn'
   gem 'newrelic_rpm'
+end
+
+group :development, :test do
+  gem 'listen', '3.1.1'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'factory_girl_rails'
+  gem 'spring'
 end

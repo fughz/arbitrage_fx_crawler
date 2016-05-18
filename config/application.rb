@@ -14,7 +14,8 @@ module ArbitrageFx
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    # config.time_zone = 'Central Time (US & Canada)'
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
@@ -22,5 +23,17 @@ module ArbitrageFx
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    #
+    config.autoload_paths += %W(#{config.root}/lib)
+
+    if ENV["RAILS_ENV"] == 'test'
+      # Rebuild ./schemata/schema.json
+      system('bundle exec prmd combine schemata/api/v1/* > schema/api/v1/schema.json')
+
+      schema = JSON.parse(File.read("#{Rails.root}/schema/api/v1/schema.json"))
+      config.middleware.use Rack::JsonSchema::ErrorHandler
+      config.middleware.use Rack::JsonSchema::ResponseValidation, schema: schema
+    end
   end
 end

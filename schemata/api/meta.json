@@ -1,0 +1,9 @@
+{
+ "description": "arbitrage_fx_crawler API",
+ "id": "arbitrage_fx_crawler",
+ "links": [{
+   "href": "http://xxxx",
+   "rel": "self"
+ }],
+ "title": "arbitrage_fx_crawler API"
+}

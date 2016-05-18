@@ -1,0 +1,72 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+title: Swap points
+description: Swap points API
+stability: prototype
+strictProperties: true
+type: object
+definitions:
+  id:
+    description: unique identifier of test
+    readOnly: true
+    format: uuid
+    type: string
+  identity:
+    anyOf:
+    - "$ref": "/schemata/swap_points#/definitions/id"
+    - "$ref": "/schemata/swap_points#/definitions/name"
+  name:
+    description: unique name of test
+    readOnly: true
+    type: string
+  pair:
+    description: Currency pair name
+    example: USD/JPY
+    pattern: ^[A-Z]{3}\/[A-Z]{3}$
+    type: string
+  date:
+    description: swap points of this day (%Y-%m-%d format)
+    pattern: ^\d{4}-\d{1,2}-\d{1,2}$
+    type: string
+  swap_points:
+    description: Swap points
+    properties:
+      short_point:
+        description: short point
+        example: 10
+        type: integer
+      long_point:
+        description: short point
+        example: 10
+        type: integer
+      currency_unit:
+        description: currency unit
+        example: 10000
+        type: integer
+      trader:
+        description: Trader name
+        example: LION FX
+        type: string
+    type: array
+links:
+- description: List existing swap_pointss.
+  href: "/swap_pointss"
+  method: GET
+  rel: instances
+  schema:
+    properties:
+      pair:
+        $ref: "#/swap_points/definitions/pair"
+      start_date:
+        $ref: "#/swap_points/definitions/date"
+      end_date:
+        $ref: "#/swap_points/definitions/date"
+    type: object
+  title: List
+properties:
+  date:
+    "$ref": "#/swap_points/definitions/date"
+  swap_point:
+    "$ref": "#/swap_points/definitions/swap_points"
+
+id: schemata/swap_points

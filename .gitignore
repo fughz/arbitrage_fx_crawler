@@ -19,6 +19,9 @@ vendor/bundle
 !/log/.keep
 /tmp
 
+# Ignore generated schema files.
+/schema
+
 # Ignore other unneeded files.
 doc/
 *.swp
