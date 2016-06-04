@@ -3,7 +3,6 @@ FactoryGirl.define do
     sequence(:short_point) { |i| i }
     sequence(:long_point) { |i| i }
     sequence(:currency_unit) { |i| 10000 }
-    sequence(:date) { DateTime.now }
 
     trait :with_trader do
       trader
