@@ -14,18 +14,16 @@
 ActiveRecord::Schema.define(version: 20160512135834) do
 
   create_table "currency_pairs", force: :cascade do |t|
-    t.string   "name"
-    t.float    "value"
-    t.datetime "date"
+    t.string   "name",       null: false
+    t.float    "value",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "swap_points", force: :cascade do |t|
-    t.float    "short_point"
-    t.float    "long_point"
-    t.integer  "currency_unit"
-    t.datetime "date"
+    t.float    "short_point",      null: false
+    t.float    "long_point",       null: false
+    t.integer  "currency_unit",    null: false
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "trader_id"
@@ -36,8 +34,8 @@ ActiveRecord::Schema.define(version: 20160512135834) do
   add_index "swap_points", ["trader_id"], name: "index_swap_points_on_trader_id"
 
   create_table "traders", force: :cascade do |t|
-    t.string   "name"
-    t.string   "key"
+    t.string   "name",       null: false
+    t.string   "key",        null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
