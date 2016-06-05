@@ -3,6 +3,7 @@ lock '3.5.0'
 
 set :application, 'arbitrage_fx_crawler'
 set :repo_url, 'git@github.com:fughz/arbitrage_fx_crawler.git'
+set :branch, fetch(:branch, "master")
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
