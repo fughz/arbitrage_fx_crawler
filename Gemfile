@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+ENV['NOKOGIRI_USE_SYSTEM_LIBRARIES'] = 'YES'
+gem 'nokogiri'
 gem 'rails', '4.2.6'
 
 gem 'rails-api'
@@ -26,6 +27,12 @@ gem 'jbuilder'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+# For Chef
+gem "chef", "12.10.24"
+gem "berkshelf", "4.3.3"
+gem "knife-solo"
+
+#
 gem 'whenever', :require => false
 
 # ActiveAdmin

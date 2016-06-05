@@ -30,3 +30,6 @@ doc/
 .DS_Store
 .idea
 .secret
+
+# Ignore Vagrant files
+/rails_book_cookbook
