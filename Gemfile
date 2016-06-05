@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ENV['NOKOGIRI_USE_SYSTEM_LIBRARIES'] = 'YES'
-gem 'nokogiri'
 gem 'rails', '4.2.6'
 
 gem 'rails-api'

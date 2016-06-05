@@ -3,10 +3,9 @@ lock '3.5.0'
 
 set :application, 'arbitrage_fx_crawler'
 set :repo_url, 'git@github.com:fughz/arbitrage_fx_crawler.git'
-set :branch, fetch(:branch, "master")
 
 # Default branch is :master
-# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
  set :deploy_to, '/var/www/awesome-events/arbitrage_fx_crawler'
@@ -38,8 +37,8 @@ set :branch, fetch(:branch, "master")
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
-# To avoid error of 'gem install nokogiri'
-set :bundle_env_variables, { nokogiri_use_system_libraries: 1 }
+## To avoid error of 'gem install nokogiri'
+#set :bundle_env_variables, { nokogiri_use_system_libraries: 1 }
 
 # add symlink target to shared directory
 #set :linked_dirs, (fetch(:linked_dirs) + ['tmp/pids'])
