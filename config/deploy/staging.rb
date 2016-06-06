@@ -21,6 +21,8 @@ role :app, %w{ops@vagrant.local}
 role :web, %w{ops@vagrant.local}
 role :db,  %w{ops@vagrant.local}
 
+set :nginx_server_name, 'localhost'
+set :unicorn_workers, 2
 
 # Configuration
 # =============
@@ -37,6 +39,7 @@ set :default_env, {
   rbenv_root: '/usr/local/rbenv',
   path: "/usr/local/rbenv/bin:/usr/local/rbenv/shims:$PATH"
 }
+
 
 # Custom SSH Options
 # ==================

@@ -16,9 +16,6 @@ gem 'sqlite3'
 
 gem 'jbuilder'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
 # Deploy with Capistrano
 # gem 'capistrano', :group => :development
 
@@ -47,7 +44,7 @@ group :development, :test do
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
-  gem 'capistrano3-unicorn'
+  gem 'capistrano-unicorn-nginx'
 end
 
 group :staging, :production do

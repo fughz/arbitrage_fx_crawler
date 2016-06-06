@@ -28,20 +28,19 @@ ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default value for linked_dirs is []
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system')
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for default_env is {}
  set :default_env, {
-   "USE_SYSTEM_GECODE" => 1
+   "USE_SYSTEM_GECODE" => 1,
  }
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
-## To avoid error of 'gem install nokogiri'
-#set :bundle_env_variables, { nokogiri_use_system_libraries: 1 }
-
-# add symlink target to shared directory
-#set :linked_dirs, (fetch(:linked_dirs) + ['tmp/pids'])
+# nginx
+set :nginx_pid, "/var/www/awesome-events/arbitrage_fx_crawler/shared/tmp/unicorn.sock"
+set :unicorn_pid, shared_path.join("tmp/pids/unicorn.pid")
 
 # setting for unicorn
 set :unicorn_rack_env, "none"
