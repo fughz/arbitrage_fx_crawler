@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.6'
 
 gem 'rails-api'
@@ -17,15 +16,18 @@ gem 'sqlite3'
 
 gem 'jbuilder'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
 # Deploy with Capistrano
 # gem 'capistrano', :group => :development
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+# For Chef
+gem "chef", "12.10.24"
+gem "berkshelf", "4.3.3"
+gem "knife-solo"
+
+#
 gem 'whenever', :require => false
 
 # ActiveAdmin
@@ -42,7 +44,7 @@ group :development, :test do
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
-  gem 'capistrano3-unicorn'
+  gem 'capistrano-unicorn-nginx'
 end
 
 group :staging, :production do
