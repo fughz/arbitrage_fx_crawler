@@ -38,6 +38,10 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/sys
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
+# whenever
+set :whenever_command, "bundle exec whenever"
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+
 # nginx
 set :nginx_pid, "/var/www/awesome-events/arbitrage_fx_crawler/shared/tmp/unicorn.sock"
 set :unicorn_pid, shared_path.join("tmp/pids/unicorn.pid")
