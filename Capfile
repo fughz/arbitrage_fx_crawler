@@ -23,6 +23,11 @@ require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 require 'capistrano/unicorn_nginx'
 
+# whenever
+set :whenever_command, "bundle exec whenever"
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+require 'whenever/capistrano'
+
 # require 'capistrano/passenger'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
