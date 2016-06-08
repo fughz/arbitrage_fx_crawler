@@ -1,6 +1,7 @@
 # arbitrage_fx_crawler
 
 [![CircleCI](https://circleci.com/gh/fughz/arbitrage_fx_crawler.svg?style=svg)](https://circleci.com/gh/fughz/arbitrage_fx_crawler)
+[![Issue Count](https://codeclimate.com/github/fughz/arbitrage_fx_crawler/badges/issue_count.svg)](https://codeclimate.com/github/fughz/arbitrage_fx_crawler)
 
 arbitrage fx crawler by Ruby on Rails.
 
