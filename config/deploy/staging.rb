@@ -23,6 +23,7 @@ role :db,  %w{ops@vagrant.local}
 
 set :nginx_server_name, 'localhost'
 set :unicorn_workers, 2
+set :nginx_service_path, 'service nginx'
 
 # Configuration
 # =============

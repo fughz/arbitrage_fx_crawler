@@ -4,7 +4,7 @@ upstream unicorn_<%= fetch(:nginx_config_name) %> {
     server <%= role.hostname %>:<%= fetch(:unicorn_tcp_listen_port)%> fail_timeout=0;
   <% end %>
 <% else %>
-  server unix:/tmp/unicorn.<%= fetch(:nginx_config_name) %>.sock fail_timeout=0;
+  server unix:<%= fetch(:unicorn_listen) %> fail_timeout=0;
 <% end %>
 }
 

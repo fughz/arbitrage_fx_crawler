@@ -44,7 +44,7 @@ group :development, :test do
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
-  gem 'capistrano-unicorn-nginx'
+  gem 'capistrano-unicorn-nginx', github: "fughz/capistrano-unicorn-nginx", branch: "support_centos7"
 end
 
 group :staging, :production do
