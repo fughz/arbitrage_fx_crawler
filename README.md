@@ -19,6 +19,19 @@ TODO: Write usage instructions here
 
 ### Deploy
 
+#### Nginx setup
+
+    $ bundle exec cap production nginx:setup
+    $ bundle exec cap production nginx:reload
+
+#### Unicorn setup
+
+    $ bundle exec cap production unicorn:setup_initializer
+    $ bundle exec cap production unicorn:setup_app_config
+    $ bundle exec cap production unicorn:restart
+
+#### arbitrage_fx_crawler setup
+
     $ bundle exec cap production deploy
 
 ## Contributing
