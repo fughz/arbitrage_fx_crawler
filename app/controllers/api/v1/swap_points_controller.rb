@@ -14,7 +14,7 @@ class Api::V1::SwapPointsController < ApplicationController
     @swap_points = SwapPoint
       .joins(:currency_pair)
       .where('currency_pairs.name = ?', pair)
-    render json: { "swap_points" => @swap_points }
+    render json: "{\"swap_points\":" + @swap_points.to_json(:include => :trader) + "}"
   end
 
   def handle_500(exception = nil)
