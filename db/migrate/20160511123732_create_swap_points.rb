@@ -4,6 +4,7 @@ class CreateSwapPoints < ActiveRecord::Migration
       t.float :short_point, null: false
       t.float :long_point, null: false
       t.integer :currency_unit, null: false
+      t.datetime :date, null: false
 
       t.timestamps null: false
     end

@@ -12,6 +12,8 @@ class Api::V1::SwapPointsController < ApplicationController
     raise "empty param end_date" if end_date.empty?
 
     @swap_points = SwapPoint
+      .where('swap_points.created_at >= ?', start_date + " 00:00:00")
+      .where('swap_points.created_at <= ?', end_date + " 23:59:59")
       .joins(:currency_pair)
       .where('currency_pairs.name = ?', pair)
     render json: "{\"swap_points\":" + @swap_points.to_json(:include => :trader) + "}"
